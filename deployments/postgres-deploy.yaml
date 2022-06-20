@@ -34,6 +34,8 @@ spec:
             secretKeyRef:
               name: db-credential
               key: password
+        - name: PGDATA
+          value: /var/lib/postgresql/data/pgdata/
         resources:
           limits:
             memory: "128Mi"
