@@ -1,8 +1,10 @@
 apiVersion: storage.k8s.io/v1
 kind: StorageClass 
 metadata:
-    name: ebs-storage-class
-provisioner: kubernetes.io/aws-ebs
+    name: aks-sc
+provisioner: kubernetes.io/azure-file
 reclaimPolicy: Delete
-allowVolumeExpansion: true
 volumeBindingMode: WaitForFirstConsumer
+parameters:
+    skuName: Standard_LRS
+    location: eastasia
