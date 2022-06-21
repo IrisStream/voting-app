@@ -2,11 +2,7 @@ apiVersion: storage.k8s.io/v1
 kind: storageClass 
 metadata:
   name: slow-gke
-provisioner: kubernetes.io/gce-pd
+provisioner: ebs.csi.aws.com
 reclaimPolicy: Delete
 allowVolumeExpansion: true
 volumeBindingMode: WaitForFirstConsumer
-parameters:
-  type: pd-standard
-  fstype: ext4
-  replication-type: none
