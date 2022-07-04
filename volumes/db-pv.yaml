@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: db-pv
+spec:
+  capacity:
+    storage: 1Gi
+  accessModes:
+    - ReadWriteOnce
+  persistentVolumeReclaimPolicy: Delete
+  storageClassName: managed-csi
+  csi:
+    driver: disk.csi.azure.com
+    readOnly: false
+    volumeHandle: /subscriptions/6b008c61-cf72-4af7-ae98-833908817b3c/resourceGroups/MC_votingapp-resources_voting-app_australiaeast/providers/Microsoft.Compute/disks/votingapp-db-disk1
+    volumeAttributes:
+      fsType: ext4

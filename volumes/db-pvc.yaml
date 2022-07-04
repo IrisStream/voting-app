@@ -6,7 +6,7 @@ spec:
   resources:
     requests:
       storage: 1Gi
-  volumeMode: Filesystem
   accessModes:
     - ReadWriteOnce
-  storageClassName: aks-sc
+  storageClassName: managed-csi
+  volumeName: db-pv
